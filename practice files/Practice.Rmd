@@ -1,0 +1,34 @@
+---
+title: "First_R_Markdown"
+author: "Shruti Kapur"
+date: "July 29, 2020"
+output: 
+  html_document:
+    keep_md: true
+---
+
+This is my first markdown document.
+
+Loading data
+
+```{r}
+library(datasets)
+data(airquality)
+summary(airquality)
+```
+
+Plotting a histogram of the data
+
+```{r}
+str(airquality)
+
+Temperature <- airquality$Temp
+hist(Temperature)
+```
+
+Regression model of ozone on predictors
+
+```{r}
+fit <- lm(Ozone ~ Solar.R + Wind + Temp, data=airquality)
+summary(fit)
+```
